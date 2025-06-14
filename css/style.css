@@ -1,0 +1,589 @@
+/* style.css */
+/* Font Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Reset + layout global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Navigație */
+nav {
+  background-color: #000;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 60px;
+  object-fit: contain;
+  margin: 0;         /* elimină margin */
+  border: none;      /* elimină border */
+  box-shadow: none;  /* elimină umbra */
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* Layout general */
+main {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: #000;
+  text-align: center;
+}
+
+.info-vegas h2 {
+  text-align: left;
+  color: #111;
+}
+
+p {
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+  text-align: justify;
+  color: #222;
+}
+
+ul, ol {
+  padding-left: 20px;
+  color: #222;
+}
+
+ul li, ol li {
+  margin: 10px 0;
+}
+
+ul li::marker {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border: 3px solid #333;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* HERO SECTION - imaginea de fundal pe tot ecranul */
+/* HERO - imagine doar pe secțiunea dedicată */
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  background-image: url('../img/hero_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+
+.hero-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centrăm pe axa orizontală a coloanei */
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  position: relative;
+  top: 200px; /* poziționează blocul mai jos */
+  left: 150px; /* mută totul spre dreapta */
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 4em;
+  font-weight: 800;
+  margin-bottom: -20px; /* redus de la 20px */
+  width: 100%;
+  text-align: left;
+}
+
+.subtitle {
+  font-size: 1.3em;
+  font-weight: 400;
+  margin-bottom: 40px; /* redus de la 30px */
+  color: #eee;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-content button {
+  align-self: center; /* centrează sub titlu */
+  padding: 12px 28px;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.hero-content button:hover {
+  background-color: #FFD700;
+  color: #111;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Galerie */
+.image-gallery {
+  position: relative;
+  overflow: hidden;
+  padding: 30px 0;
+  margin-bottom: 40px;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding: 0 10px;
+  scrollbar-width: none;
+}
+
+.gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.image-gallery img {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 2px solid #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.image-gallery img.active {
+  transform: scale(1.08);
+  filter: brightness(1.1) contrast(1.1);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  z-index: 5;
+}
+
+/* Butoane galerie */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background 0.3s;
+  display: none;
+}
+
+.image-gallery:hover .scroll-btn {
+  display: block;
+}
+
+.scroll-btn.left {
+  left: 10px;
+}
+
+.scroll-btn.right {
+  right: 10px;
+}
+
+.scroll-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Info section */
+.info-vegas {
+  background-color: #fdfdfd;
+  color: #111;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.info-vegas h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+blockquote {
+  font-style: italic;
+  color: #000;
+  background: #fff;
+  padding: 15px 25px;
+  border-left: 5px solid #FFD700;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95em;
+  margin-top: 40px;
+}
+
+.personality-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 20px;
+  margin-bottom: 40px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.personality-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.personality-card img {
+  height: auto;
+  width: 300px; /* fix pentru uniformitate */
+  object-fit: cover;
+  border: none;           /* elimină chenarul */
+  box-shadow: none;       /* elimină umbra */
+  border-radius: 10px;
+  align-self: stretch; /* imaginea va umple vertical cât textul */
+  width: 300px;
+}
+
+.person-info {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.person-info h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.person-info p {
+  color: #333;
+  font-size: 1.1em;
+  text-align: justify;
+}
+.people-wrapper {
+  max-width: 1400px;
+  margin: 80px auto 0;
+  padding: 0 20px;
+}
+
+.people-wrapper h1 {
+  font-size: 2.5em;
+  color: #222;
+  font-weight: 800;
+  text-align: center;
+  margin: 30px auto 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history-wrapper {
+  max-width: 1400px; /* înainte era 1200px */
+  margin: 0 auto;
+}
+
+.history-wrapper h1 {
+  font-size: 2.5em;
+  color: #222;
+  font-weight: 800;
+  text-align: center;
+  margin: 50px auto 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.history-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 20px;  /* înainte era 40px 60px */
+  margin-bottom: 40px;
+}
+
+.history-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.history-block img {
+  width: 100%;
+  max-width: 450px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.history-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.history-text h2 {
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.history-text p {
+  text-align: justify;
+  color: #333;
+  margin-bottom: 1em;
+}
+/* Wrapper general pentru pagina de servicii */
+.services-wrapper {
+  max-width: 1400px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Titlul principal */
+.services-wrapper h1 {
+  font-size: 2.5em;
+  color: #111;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Bloc individual de serviciu (text + poză) */
+.service-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px; /* redus spațiu dintre imagine și text */
+  margin-bottom: 30px; /* mai puțin spațiu între blocuri */
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/*.service-block:nth-child(even) {
+  flex-direction: row-reverse;
+}*/
+
+/* Textul din stânga/dreapta */
+.service-text {
+  flex: 2;
+}
+
+.service-text h2 {
+  font-size: 1.6em;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.service-text p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: justify;
+}
+
+.service-text ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.service-text ul li {
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+
+.service-text a {
+  color: #0078d4;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.service-text a:hover {
+  text-decoration: underline;
+}
+
+/* Imaginea de serviciu */
+.service-img {
+  flex: 0 0 220px; /* fixăm o lățime mai mică */
+}
+
+.service-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.sightseeing-wrapper {
+  max-width: 1300px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.white-title {
+  text-align: center;
+  font-size: 2.5em;
+  color: #000; /* schimbat din #fff în #000 */
+  margin-bottom: 40px;
+}
+
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.video-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.video-item p {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  color: #222;
+  text-align: justify;
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  border: none;
+}
+
